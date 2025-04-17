@@ -4,10 +4,11 @@ Bu proje, derin öğrenme kullanarak beyin tümörü tespiti yapmak için geliş
 
 ## Dosya Yapısı
 
+
 ```
 BrainTumorDetection/
-│── model/                    # Eğitilmiş model dosyası
-│   ├── brain_tumor_model.keras
+│── model/                     # Eğitilmiş model dosyası (GitHub'a yüklenmedi)
+│   ├── brain_tumor_model.keras 
 │── dataset/                   # Eğitim verileri
 │   ├── tumor/                 # Tümörlü hastaların görselleri
 │   ├── normal/                # Sağlıklı bireylerin görselleri
@@ -23,7 +24,7 @@ BrainTumorDetection/
 
 Bu projeyi çalıştırmak için aşağıdaki kütüphanelerin yüklenmesi gerekmektedir:
 
-```sh
+```bash
 pip install -r requirements.txt
 ```
 
@@ -32,41 +33,45 @@ pip install -r requirements.txt
 ### Modeli Yükleme
 
 Modeli yükleyip özetini görmek için:
-
-```sh
+```bash
 python3 src/model.py
 ```
 
 ### Tahmin Yapma
 
 Bir görsel üzerinde tahmin yapmak için:
-
-```sh
+```bash
 python3 src/predict.py test_images/Test.jpeg
 ```
 
-Dışarıdaki Bir Görseli Kullanma:
-
-```sh
+Dışarıdan bir görsel kullanmak için:
+```bash
 python3 src/predict.py /tam/yol/test_images/Test.jpeg
 ```
 
 Eğer resim belirtilmezse, varsayılan bir test görseli kullanılır.
 
-## Model Eğitimi
+## Model Dosyası
+
+Model dosyası GitHub dosya boyutu sınırını aştığı için repoya eklenmemiştir. Aşağıdaki Google Drive bağlantısından indirilebilir:
+
+**Model İndirme Bağlantısı:** [brain_tumor_model.keras](https://drive.google.com/file/d/1m3lpRUntqI03ElS8fu8z-mU4VYjOtZ7S/view?usp=sharing)
+
+Indirdikten sonra `model/` klasörü altına yerleştirilmelidir.
+
+## Model Eğitimi (Opsiyonel)
 
 Eğer modeli yeniden eğitmek istiyorsanız:
-
-```sh
+```bash
 python3 src/train.py
 ```
-
-Ancak, bu işlem için yeterli donanım kaynağına ihtiyacınız olabilir.
+Bu işlem için yeterli donanım (GPU) gerekebilir.
 
 ## Notlar
 
-- Model dosyası `model/brain_tumor_model.keras` dizininde bulunmalıdır.
-- Test görselleri `test_images/` dizininde yer almalıdır.
-- Kod, GPU olmadan da çalışabilir ancak eğer TensorFlow GPU desteği etkinse daha hızlı çalışır.
+- Model dosyası `model/brain_tumor_model.keras` dizininde olmalıdır.
+- Test görselleri `test_images/` klasörüne konulmalıdır.
+- TensorFlow GPU desteği etkinse daha hızlı çalışır.
 
-Herhangi bir hata alırsanız, dosya yollarının doğru olduğundan emin olun ve terminalde hata mesajlarını kontrol edin.
+Herhangi bir hata durumunda terminal çıktısını kontrol ediniz ve dosya yollarının doğru olduğundan emin olun.
+
